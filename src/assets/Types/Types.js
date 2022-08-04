@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export interface IZone {
     left: number;
     top: number;
@@ -18,4 +20,9 @@ export interface IProgress {
     loadedSeconds: number;
     played: number;
     playedSeconds: number;
+}
+
+export interface IRect {
+    id: number;
+    rect: ReactElement;
 }

@@ -1,13 +1,9 @@
-import React, { useRef, LegacyRef, useEffect, useState, ReactElement } from "react";
+import React, { useRef, LegacyRef, useEffect, useState } from "react";
 import ReactPlayer from 'react-player';
 import { useGetFragmentsQuery } from '@store/api/fragmentsApi';
-import { IProgress, IFragment } from "@assets/Types/Types";
+import { IProgress, IFragment, IRect } from "@assets/Types/Types";
 import s from '../App.module.sass';
 const ratio = 640/1280;
-interface IRect {
-    id: number;
-    rect: ReactElement;
-};
 
 export const LeftPanel = () => {
     const { data } = useGetFragmentsQuery('');
@@ -21,7 +17,7 @@ export const LeftPanel = () => {
             newdata.forEach(n => {
                 n.completed = false;
                 n.duration = n.duration / 1000;
-                n.timestamp = n.timestamp / 1000
+                n.timestamp = n.timestamp / 1000;
             });
             newdata.sort((a, b) => a.timestamp - b.timestamp);
             setNewData(newdata);
@@ -59,6 +55,8 @@ export const LeftPanel = () => {
                 return;
             } else {
                 // удаляем прямоугольник
+                let arr = rectArr.filter(elem => elem.id !== n.id);
+                setRectArr(arr);
                 n.completed = false;
                 return;
             }

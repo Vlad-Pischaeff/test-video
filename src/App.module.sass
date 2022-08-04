@@ -1,0 +1,59 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+.mainContainer
+    width: 100vw
+    height: 100vh
+    background: aliceblue
+    display: flex
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
+
+.header
+    flex: 0 0 3rem
+    text-align: center
+    line-height: 3rem
+    width: 100%
+
+.footer
+    flex: 0 0 3rem
+    text-align: center
+    line-height: 3rem
+    width: 100%
+
+.centralContainer
+    flex: 1 1 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    overflow: auto
+
+.leftPanel
+    flex: 1 1 auto
+    height: 100%
+    background: #eee
+
+.wrap
+    margin: 1rem
+    position: relative
+.player, 
+.canvas
+    position: absolute
+    
+.rightPanel
+    flex: 0 0 15rem
+    height: 100%
+    background: #ddd
+    overflow: auto
+
+.item
+    padding: .05rem .5rem
+    margin: .2rem
+    background: #ccc
+    &:hover
+        cursor: pointer
+        background: #bbb

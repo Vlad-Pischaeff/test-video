@@ -1,21 +1,21 @@
 export interface IZone {
-    left: Number;
-    top: Number;
-    height: Number;
-    width: Number;
-
+    left: number;
+    top: number;
+    height: number;
+    width: number;
 }
 
 export interface IFragment {
-    id: Number;
-    timestamp: Number;
-    duration: Number;
+    id: number;
+    timestamp: number;
+    duration: number;
     zone: IZone;
+    completed?: boolean;
 }
 
 export interface IProgress {
-    loaded: Number;
-    loadedSeconds: Number;
-    played: Number;
-    playedSeconds: Number;
+    loaded: number;
+    loadedSeconds: number;
+    played: number;
+    playedSeconds: number;
 }

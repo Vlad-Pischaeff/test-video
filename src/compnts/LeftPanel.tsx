@@ -11,7 +11,6 @@ export const LeftPanel = () => {
     const dispatch = useAppDispatch();
     const { normData: newData, rectArr, currentTime } = useAppSelector(selectUI);
     const refPlayer:LegacyRef<ReactPlayer> = useRef(null);
-    console.log('current Time..', currentTime);
     
     useEffect(() => {
         if (currentTime) {

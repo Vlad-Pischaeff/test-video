@@ -35,7 +35,7 @@ export interface IStyles {
 }
 
 export type UIType = {
-    currentItem: number | null;
+    currentTime: number | null;
     normData: IFragment[];
     rectArr: IRect[];
 }

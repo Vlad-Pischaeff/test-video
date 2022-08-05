@@ -6,7 +6,7 @@ import { IFragment, IRect, IStyles, UIType } from "@assets/Types/Types";
 const RATIO = 640/1280;
 
 const initialState: UIType = {
-    currentItem: null,
+    currentTime: null,
     normData: [ 
         {
             id: 0,
@@ -23,11 +23,11 @@ const slice = createSlice({
     name: "ui",
     initialState,
     reducers: {
-        resetMessage: (state) => {
-            state.currentItem = null;
+        resetTime: (state) => {
+            state.currentTime = null;
         },
-        setMessage: (state, { payload }: PayloadAction<number>) => {
-            state.currentItem = payload;
+        setTime: (state, { payload }: PayloadAction<number>) => {
+            state.currentTime = payload;
         },
         setCompleted: (state, { payload }: PayloadAction<number>) => {
             const index = state.normData.findIndex(n => n.id === payload);
@@ -71,7 +71,7 @@ const slice = createSlice({
     },
 });
 
-export const { resetMessage, setMessage, setCompleted, resetCompleted } = slice.actions;
+export const { resetTime, setTime, setCompleted, resetCompleted } = slice.actions;
 
 export default slice.reducer;
 

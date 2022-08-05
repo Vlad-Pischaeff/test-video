@@ -1,4 +1,4 @@
-import React, { useRef, LegacyRef } from "react";
+import React, { useRef, LegacyRef, useEffect } from "react";
 import ReactPlayer from 'react-player';
 import { useAppSelector, useAppDispatch } from '@store/hooks';
 import { selectUI, setCompleted, resetCompleted } from "@store/slices/ui";
@@ -9,8 +9,15 @@ import s from '../App.module.sass';
 export const LeftPanel = () => {
     const { data } = useGetFragmentsQuery('');
     const dispatch = useAppDispatch();
-    const { normData: newData, rectArr } = useAppSelector(selectUI);
+    const { normData: newData, rectArr, currentTime } = useAppSelector(selectUI);
     const refPlayer:LegacyRef<ReactPlayer> = useRef(null);
+    console.log('current Time..', currentTime);
+    
+    useEffect(() => {
+        if (currentTime) {
+            refPlayer.current?.seekTo(currentTime, "seconds");
+        }
+    }, [currentTime]);
 
     const checkRect = (e: number) => {
         newData.forEach(n => {

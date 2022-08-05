@@ -35,6 +35,7 @@ export interface IStyles {
 }
 
 export type UIType = {
-    currentItem: number;
-    normData: IFragment[]; 
+    currentItem: number | null;
+    normData: IFragment[];
+    rectArr: IRect[];
 }

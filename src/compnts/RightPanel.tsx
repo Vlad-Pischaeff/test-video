@@ -7,8 +7,6 @@ import s from '../App.module.sass';
 export const RightPanel = () => {
     const { normData: newData } = useAppSelector(selectUI);
 
-    console.log('RightPanel..', s.item)
-
     return (
         <aside className={s.rightPanel}>
             { newData.length &&

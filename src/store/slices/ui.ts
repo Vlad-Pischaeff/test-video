@@ -1,15 +1,9 @@
 import React from "react";
-import { createSlice, PayloadAction, current } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fragmentsApi } from "@store/api/fragmentsApi";
 import { RootState } from "..";
-import { IFragment, IRect, IStyles } from "@assets/Types/Types";
+import { IFragment, IRect, IStyles, UIType } from "@assets/Types/Types";
 const RATIO = 640/1280;
-
-export type UIType = {
-    currentItem: number | null;
-    normData: IFragment[];
-    rectArr: IRect[];
-}
 
 const initialState: UIType = {
     currentItem: null,

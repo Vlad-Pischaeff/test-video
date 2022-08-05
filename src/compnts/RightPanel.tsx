@@ -1,17 +1,18 @@
 import React from "react";
-import s from '../App.module.sass';
-import { useGetFragmentsQuery } from '@store/api/fragmentsApi';
+import { useAppSelector } from '@store/hooks';
+import { selectUI } from "@store/slices/ui";
 import { Element } from "./Element";
+import s from '../App.module.sass';
 
 export const RightPanel = () => {
-    const { data = [] } = useGetFragmentsQuery('');
+    const { normData: newData } = useAppSelector(selectUI);
 
-    console.log('RightPanel..', data)
+    console.log('RightPanel..', s.item)
 
     return (
         <aside className={s.rightPanel}>
-            { data.length &&
-                data.map((item, index) => {
+            { newData.length &&
+                newData.map((item, index) => {
                     return <Element key={index} item={item} />
                 })
             }

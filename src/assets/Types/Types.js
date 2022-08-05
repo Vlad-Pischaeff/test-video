@@ -23,6 +23,18 @@ export interface IProgress {
 }
 
 export interface IRect {
-    id: number;
-    rect: ReactElement;
+    id: number | null;
+    rect: IStyles;
+}
+
+export interface IStyles {
+    left: string;
+    top: string;
+    width: string;
+    height: string;
+}
+
+export type UIType = {
+    currentItem: number;
+    normData: IFragment[]; 
 }

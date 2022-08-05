@@ -43,7 +43,9 @@
 .player, 
 .canvas
     position: absolute
-    
+.canvas
+    border: 2px solid white
+
 .rightPanel
     flex: 0 0 15rem
     height: 100%
@@ -57,3 +59,7 @@
     &:hover
         cursor: pointer
         background: #bbb
+    &_active
+        padding: .05rem .5rem
+        margin: .2rem
+        background: deeppink

@@ -22,14 +22,11 @@ export const LeftPanel = () => {
         newData.forEach(n => {
             if (e < n.timestamp) {
                 if (n.completed) dispatch(resetCompleted(n.id));
-                return;
             } else if (e < (n.timestamp + n.duration)) {
                 if (!n.completed) dispatch(setCompleted(n.id));
-                return;
             } else {
                 // удаляем прямоугольник
                 dispatch(resetCompleted(n.id));
-                return;
             }
         });
     }

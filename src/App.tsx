@@ -1,8 +1,11 @@
 import React from 'react';
+import { useGetFragmentsQuery } from '@store/api/fragmentsApi';
 import s from './App.module.sass';
 import * as UI from './compnts';
 
 function App() {
+    useGetFragmentsQuery('');
+
     return (
         <div className={s.mainContainer}>
             <header className={s.header}>

@@ -10,8 +10,8 @@ export const RightPanel = () => {
     return (
         <aside className={s.rightPanel}>
             { newData.length &&
-                newData.map((item, index) => {
-                    return <Element key={index} item={item} />
+                newData.map(item => {
+                    return <Element key={item.id} item={item} />
                 })
             }
         </aside>

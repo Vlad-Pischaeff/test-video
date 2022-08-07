@@ -2,7 +2,7 @@ import React, { useRef, LegacyRef, useEffect } from "react";
 import ReactPlayer from 'react-player';
 import { useAppSelector, useAppDispatch } from '@store/hooks';
 import { selectUI, setCompleted, resetCompleted } from "@store/slices/ui";
-import { IProgress } from "@assets/Types/Types";
+import { IFragment, IProgress } from "@assets/Types/Types";
 import s from '../App.module.sass';
 
 export const LeftPanel = () => {
@@ -18,12 +18,16 @@ export const LeftPanel = () => {
 
     const checkRect = (e: number) => {
         newData.forEach(n => {
-            if (e < n.timestamp || (e > (n.timestamp + n.duration))) {
-                n.completed && dispatch(resetCompleted(n.id));
-            } else {
-                !n.completed && dispatch(setCompleted(n.id));
-            }
+            setTimeout(() => Checking(e, n), 0, e, n);
         });
+    }
+
+    const Checking = (e: number, n: IFragment) => {
+        if (e < n.timestamp || (e > (n.timestamp + n.duration))) {
+            n.completed && dispatch(resetCompleted(n.id));
+        } else {
+            !n.completed && dispatch(setCompleted(n.id));
+        }
     }
 
     const handleProgress = (e: IProgress) => {

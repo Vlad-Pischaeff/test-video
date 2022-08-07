@@ -20,13 +20,10 @@ export const LeftPanel = () => {
 
     const checkRect = (e: number) => {
         newData.forEach(n => {
-            if (e < n.timestamp) {
-                if (n.completed) dispatch(resetCompleted(n.id));
-            } else if (e < (n.timestamp + n.duration)) {
-                if (!n.completed) dispatch(setCompleted(n.id));
+            if (e < n.timestamp || (e > (n.timestamp + n.duration))) {
+                n.completed && dispatch(resetCompleted(n.id));
             } else {
-                // удаляем прямоугольник
-                dispatch(resetCompleted(n.id));
+                !n.completed && dispatch(setCompleted(n.id));
             }
         });
     }

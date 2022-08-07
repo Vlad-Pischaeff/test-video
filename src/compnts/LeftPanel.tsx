@@ -4,12 +4,17 @@ import { useAppSelector, useAppDispatch } from '@store/hooks';
 import { selectUI, setCompleted, resetCompleted } from "@store/slices/ui";
 import { IFragment, IProgress } from "@assets/Types/Types";
 import s from '../App.module.sass';
+let timer: number;
 
 export const LeftPanel = () => {
     const dispatch = useAppDispatch();
     const { normData: newData, rectArr, currentTime } = useAppSelector(selectUI);
     const refPlayer:LegacyRef<ReactPlayer> = useRef(null);
     
+    useEffect(() => {
+        return () => clearTimeout(timer);
+    }, []);
+
     useEffect(() => {
         if (currentTime) {
             refPlayer.current?.seekTo(currentTime, "seconds");
@@ -18,7 +23,7 @@ export const LeftPanel = () => {
 
     const checkRect = (e: number) => {
         newData.forEach(n => {
-            setTimeout(() => Checking(e, n), 0, e, n);
+            timer = setTimeout(() => Checking(e, n), 0, e, n);
         });
     }
 

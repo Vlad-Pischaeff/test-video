@@ -24,7 +24,8 @@
             "@store/*": [ "src/store/*" ],
             "@compnts/*": [ "src/compnts/*" ],
             "@assets/*": [ "src/assets/*" ]
-        }
+        },
+        "types": [],
     },
     "include": [
         "src/**/*"

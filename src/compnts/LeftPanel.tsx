@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import { useAppSelector, useAppDispatch } from '@store/hooks';
 import { selectUI, setCompleted, resetCompleted } from "@store/slices/ui";
 import { IFragment, IProgress } from "@assets/Types/Types";
-import s from '../App.module.sass';
+import s from '@assets/Styles/App.module.sass';
 let timer: number;
 
 export const LeftPanel = () => {

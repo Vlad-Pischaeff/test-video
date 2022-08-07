@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGetFragmentsQuery } from '@store/api/fragmentsApi';
-import s from './App.module.sass';
+import s from '@assets/Styles/App.module.sass';
 import * as UI from './compnts';
 
 function App() {

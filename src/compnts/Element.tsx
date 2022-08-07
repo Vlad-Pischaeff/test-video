@@ -2,7 +2,7 @@ import React from "react";
 import { useAppSelector, useAppDispatch } from '@store/hooks';
 import { selectUI, setTime } from "@store/slices/ui";
 import { IFragment } from "@assets/Types/Types";
-import s from '../App.module.sass';
+import s from '@assets/Styles/App.module.sass';
 
 interface IElementProps {
     item: IFragment,

@@ -2,7 +2,7 @@ import React from "react";
 import { useAppSelector } from '@store/hooks';
 import { selectUI } from "@store/slices/ui";
 import { Element } from "./Element";
-import s from '../App.module.sass';
+import s from '@assets/Styles/App.module.sass';
 
 export const RightPanel = () => {
     const { normData: newData } = useAppSelector(selectUI);

@@ -4,7 +4,7 @@ import { IFragment } from '@assets/Types/Types';
 export const fragmentsApi = createApi({
     reducerPath: 'fragmentsApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://www.mocky.io/v2',
+        baseUrl: 'https://www.mocky.io/v2',
     }),
     endpoints: (builder) => ({
         getFragments: builder.query<IFragment[], string>({
